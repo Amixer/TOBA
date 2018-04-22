@@ -34,30 +34,19 @@ public class NewCustomerServlet extends HttpServlet {
         String state = request.getParameter("UserState");
         String zip = request.getParameter("zip");
         String email = request.getParameter("Email");
-           String message = " ";
-            if (firstName == null || lastName == null || email == null || UserIdent == null || password== null || Phonenum==null || city== null|| state==null|| zip==null|| 
-                firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || UserIdent.isEmpty() || password.isEmpty() || Phonenum.isEmpty() || city.isEmpty() || state.isEmpty() || zip.isEmpty()) {
-             message = "Please Fill out all the form fields";
-             
-           //  PrintWriter htmlOut = response.getWriter();
-         //    response.setContentType("text/html");
-          //   htmlOut.println("<html><head><title>" + 
-          //           "Input Error </title></head><body>" +
-          //           "<h1> Please Fill out all the form fields</h1>" + "<body></html>");
-                
-              
-                
-               response.sendRedirect("new_customer.jsp");
-                
-                
-            } 
-            else {
+        String message = " ";
+        
+        if (firstName == null || lastName == null || email == null || 
+                    UserIdent == null || password== null || Phonenum==null ||
+                    city== null|| state==null|| zip==null|| 
+                    firstName.isEmpty() || lastName.isEmpty() ||
+                    email.isEmpty() || UserIdent.isEmpty() || password.isEmpty() || Phonenum.isEmpty() ||
+                    city.isEmpty() || state.isEmpty() || zip.isEmpty()) {
+                        message = "Please Fill out all the form fields";
+                        response.sendRedirect("new_customer.jsp");
+            } else {
                 message = null;
                 response.sendRedirect("Success.html");
-            };
-        
-        
-        
-       
-
+            }
     }
+}

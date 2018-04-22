@@ -14,9 +14,9 @@
       
         <h1>Enter Your Information Below</h1>
                 <nav>
-            <a href="/Albaugh_WebJava1-TOBA/Index.html">Home</a> |
-            <a href="/Albaugh_WebJava1-TOBA/Login.html">Sign In</a> |
-            <a href="/Albaugh_WebJava1-TOBA/new_customer.jsp">Sign Up</a>
+            <a href="Index.html">Home</a> |
+            <a href="Login.html">Sign In</a> |
+            <a href="new_customer.jsp">Sign Up</a>
         </nav><br><br>
         
         
