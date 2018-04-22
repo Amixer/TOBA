@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import TOBA.User;
 
 
 /**
@@ -21,32 +22,78 @@ import data.UserIO;
  */
 public class NewCustomerServlet extends HttpServlet {
 
+    @Override
     protected void doPost( HttpServletRequest request,
-            HttpServletResponse response) throws ServletException, IOException {
-           
-// get parameters from the request
-        String firstName = request.getParameter("FirstName");
-        String lastName = request.getParameter("LastName");
-        String UserIdent = request.getParameter("UserIdent");
-        String password = request.getParameter("password");
-        String Phonenum = request.getParameter("PhoneNum");
-        String city = request.getParameter("UserCity");
-        String state = request.getParameter("UserState");
-        String zip = request.getParameter("zip");
-        String email = request.getParameter("Email");
-        String message = " ";
+            HttpServletResponse response) 
+            throws ServletException, IOException {
+        String url="";
         
-        if (firstName == null || lastName == null || email == null || 
-                    UserIdent == null || password== null || Phonenum==null ||
-                    city== null|| state==null|| zip==null|| 
-                    firstName.isEmpty() || lastName.isEmpty() ||
-                    email.isEmpty() || UserIdent.isEmpty() || password.isEmpty() || Phonenum.isEmpty() ||
-                    city.isEmpty() || state.isEmpty() || zip.isEmpty()) {
-                        message = "Please Fill out all the form fields";
-                        response.sendRedirect("new_customer.jsp");
+    // get action
+    
+    String action = request.getParameter("action");
+    if (action == null) {
+        action = "join"; // default action
+    }
+    
+    if (action.equals("join")) {
+        url = "/new_customer.jsp";
+    }
+    else if (action.equals("add")) {
+// get parameters from the request
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zip = request.getParameter("zip");
+        String email = request.getParameter("email");
+       // String userID = lastName + zip;
+      //  String password = "welcome1";
+        
+      
+        User user = new User(firstName, lastName, email, phone, address, city, state, zip);
+        
+        String message;
+        
+        if (firstName == null 
+                || lastName == null 
+                || email == null 
+                || address == null 
+                || phone == null 
+                || city == null
+                || state==null
+                || zip==null
+                || firstName.isEmpty() 
+                || lastName.isEmpty() 
+                || email.isEmpty()
+                || phone.isEmpty() 
+                || address.isEmpty()
+                || city.isEmpty() 
+                || state.isEmpty() 
+                || zip.isEmpty()) {
+            message = "Please Fill out all the form fields";
+            url = "/new_customer.jsp";
+                        
             } else {
                 message = null;
-                response.sendRedirect("Success.html");
+                url = "/success.jsp";
+                UserDB.insert(user);
             }
+        request.setAttribute("user", user);
+        request.setAttribute("message", message);
+            
+
+        }
+        getServletContext()
+                .getRequestDispatcher(url)
+                .forward(request, response);
     }
+    
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }    
 }
