@@ -7,13 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="includes/header.html" /> 
-        <h1>Online Services</h1>
-        <nav>
-            <a href="Index.html">Home</a> |
-            <a href="Login.html">Sign In</a> |
-            <a href="new_customer.jsp">Sign Up</a>
-        </nav>
-        <form action="LoginServlet" method="Get">
+
+        <form action="LoginServlet" method="Post">
             <table cellspacing="4" border="0">
                 <tr>
                     <td align="center">User ID:</td>

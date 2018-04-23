@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import TOBA.User;
+//import TOBA.User;
 
 
 /**
@@ -26,19 +26,7 @@ public class NewCustomerServlet extends HttpServlet {
     protected void doPost( HttpServletRequest request,
             HttpServletResponse response) 
             throws ServletException, IOException {
-        String url="";
-        
-    // get action
-    
-    String action = request.getParameter("action");
-    if (action == null) {
-        action = "join"; // default action
-    }
-    
-    if (action.equals("join")) {
-        url = "/new_customer.jsp";
-    }
-    else if (action.equals("add")) {
+
 // get parameters from the request
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -48,30 +36,30 @@ public class NewCustomerServlet extends HttpServlet {
         String state = request.getParameter("state");
         String zip = request.getParameter("zip");
         String email = request.getParameter("email");
-       // String userID = lastName + zip;
-      //  String password = "welcome1";
+        String userID = lastName + zip;
+        String password = "welcome1";
         
       
-        User user = new User(firstName, lastName, email, phone, address, city, state, zip);
+        User user = new User(firstName, lastName, email, phone, address, city, state, zip, userID, password);
         
         String message;
-        
-        if (firstName == null 
-                || lastName == null 
-                || email == null 
-                || address == null 
-                || phone == null 
-                || city == null
-                || state==null
-                || zip==null
-                || firstName.isEmpty() 
-                || lastName.isEmpty() 
-                || email.isEmpty()
-                || phone.isEmpty() 
-                || address.isEmpty()
-                || city.isEmpty() 
-                || state.isEmpty() 
-                || zip.isEmpty()) {
+        String url;
+        if (//firstName == null 
+             //  || lastName == null 
+             // || email == null 
+             // || address == null 
+             //  || phone == null
+                //|| city == null
+               //|| state== null
+               // || zip== null                || 
+                firstName.isEmpty() 
+              || lastName.isEmpty() 
+               || email.isEmpty() ){
+             //  || phone.isEmpty() ) {
+             //  || address.isEmpty()
+             ///  || city.isEmpty() 
+             ///  || state.isEmpty() 
+             //  || zip.isEmpty()
             message = "Please Fill out all the form fields";
             url = "/new_customer.jsp";
                         
@@ -84,7 +72,7 @@ public class NewCustomerServlet extends HttpServlet {
         request.setAttribute("message", message);
             
 
-        }
+        
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);

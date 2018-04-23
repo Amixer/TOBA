@@ -27,7 +27,9 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    
+    @Override
+    protected void doPost (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String username = request.getParameter("username");
@@ -36,10 +38,10 @@ public class LoginServlet extends HttpServlet {
         
         if(username.equalsIgnoreCase("Jsmith@toba.com")&& password.equalsIgnoreCase("letmein")) {
                
-            response.sendRedirect("Account_activity.html");
+            response.sendRedirect("account_activity.jsp");
         }
         else {
-            response.sendRedirect("Login_failure.html");
+            response.sendRedirect("login_failure.jsp");
         }
         
        

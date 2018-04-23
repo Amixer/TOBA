@@ -1,9 +1,5 @@
 package TOBA;
 
-
-
-import TOBA.User;
-
 public class UserDB {
 
     public static long insert(User user) {

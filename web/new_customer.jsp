@@ -12,39 +12,39 @@
 </c:if>
         
         <form action="NewCustomerServlet" method="post">
-            <input type="hidden" name="action" value="add">   
+           <input type="hidden" name="action" value="add"> 
             <table cellspacing="4" border="0">
                 <tr>
                     <td align="right">First Name:</td>
-                    <td><input type="text" name="firstName" value="${user.firstName}"></td>
+                    <td><input type="text" name="firstName"></td>
                 </tr>
                 <tr>
                     <td align="right">Last Name:</td>
-                    <td><input type="text" name="lastName" value="${user.lastName}"></td>
+                    <td><input type="text" name="lastName"></td>
                 </tr>
                 <tr>
                     <td align="right">Phone:</td>
-                    <td><input type="text" name="Phone" value="${user.phone}"></td>
+                    <td><input type="text" name="Phone"></td>
                 </tr>
                 <tr>
                     <td align="right">Address:</td>
-                    <td><input type="text" name="address" value = "${user.address}"></td>
+                    <td><input type="text" name="address"></td>
                 </tr>
                 <tr>
                     <td align="right">City:</td>
-                    <td><input type="text" name="city" value ="${user.city}" ></td>
+                    <td><input type="text" name="city" ></td>
                 </tr>
                 <tr>
                     <td align="right">State:</td>
-                    <td><input type="text" name="state" value="${user.state}"></td>
+                    <td><input type="text" name="state"></td>
                 </tr>
                 <tr>
                     <td align="right">Zip Code:</td>
-                    <td><input type="text" name="zip" value="${user.zip}"></td>
+                    <td><input type="text" name="zip"></td>
                 </tr>
                 <tr>
                     <td align="right">Email:</td>
-                    <td><input type="text" name="email" value="${user.email}"></td>
+                    <td><input type="text" name="email"></td>
                 </tr>
                 <tr>
                     <td align="right"></td>

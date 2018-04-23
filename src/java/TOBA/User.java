@@ -14,8 +14,8 @@ public class User implements Serializable {
     private String state;
     private String zip;
     private String phone;
-  //  private String userID;
-  //  private String password;
+    private String userID;
+    private String password;
     
     public User() {
         firstName = "";
@@ -26,12 +26,12 @@ public class User implements Serializable {
         state ="";
         zip = "";
         phone ="";
-      //  userID = "";
-      //  password = "";
+        userID = "";
+        password = "";
         
     }
 
-    public User(String firstName, String lastName, String email, String address, String city, String state, String zip, String phone) {
+    public User(String firstName, String lastName, String email, String address, String city, String state, String zip, String phone, String userID, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -40,8 +40,8 @@ public class User implements Serializable {
         this.state = state;
         this.zip = zip;
         this.phone = phone;
-      //  this.userID = userID;
-      //  this.password = password;
+        this.userID = userID;
+        this.password = password;
     }       
 
 
@@ -69,21 +69,21 @@ public class User implements Serializable {
         this.email = email;
     }
     
- //   public String getuserID() {
- //       return userID;
- //   }
+    public String getuserID() {
+       return userID;
+   }
 
- //   public void setuserID(String userID) {
- //       this.userID = userID;
-  //  }
-  //      public String getPassword() {
-  //      return password;
-  //  }
+    public void setuserID(String userID) {
+       this.userID = lastName + zip;
+ }
+  public String getPassword() {
+     return password;
+    }
 
-    //public void setPassword(String password) {
-  //      this.password = password;
-   // }
-  //  
+    public void setPassword(String password) {
+        this.password = password;
+    }
+  
    public String getaddress() {
         return address;
    }
