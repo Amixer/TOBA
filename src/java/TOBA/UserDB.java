@@ -1,10 +1,27 @@
 package TOBA;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
+
+import TOBA.User;
+
 public class UserDB {
 
-    public static long insert(User user) {
-        // TODO: Add code that adds the user to the database
-        // NOTE: This is shown in chapters 11-13
-        return 0;
+    public static void insert(User user) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();        
+        try {
+            em.persist(user);
+            trans.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            trans.rollback();
+        } finally {
+            em.close();
+        }
     }
-}
+  
+    }
