@@ -6,5 +6,5 @@
             maxIdle="30" maxWait="10000" name="jdbc/user" password="" 
              removeAbandoned="true" 
             removeAbandonedTimeout="60" type="javax.sql.DataSource" 
-            url="jdbc:mysql://localhost:3306/user?zeroDateTimeBehavior=convertToNull [root on Default schema]" username="root"/>
+            url="jdbc:mysql://localhost:3306/user" username="root"/>
 </Context>

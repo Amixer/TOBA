@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
+
+        <title>Titan Bank Home</title>
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
-    </body>
+        <h1>Titan Bank Online Banking</h1>
+        <nav>
+            <a href="index.jsp">Home</a> |
+            <a href="login.jsp">Sign In</a> |
+            <a href="new_customer.jsp">Sign Up</a>
+        </nav>
+<form method="POST" action='<%= response.encodeURL("j_security_check") %>' >
+  <table border="0" cellspacing="5">
+    <tr>
+      <th align="right">Username:</th>
+      <td align="left"><input type="text" name="j_username"></td>
+    </tr>
+    <tr>
+      <th align="right">Password:</th>
+      <td align="left"><input type="password" name="j_password"></td>
+    </tr>
+    <tr>
+      <td align="right"><input type="submit" value="Log In"></td>
+      <td align="left"><input type="reset"></td>
+    </tr>
+  </table>
+</form>
+
+        <%@ page import="java.util.GregorianCalendar, java.util.Calendar" %>
+<%  
+    GregorianCalendar currentDate = new GregorianCalendar();
+    int currentYear = currentDate.get(Calendar.YEAR);
+%>
+
+<p>The current date is ${requestScope.currentDate}</p>
+</body>
 </html>
