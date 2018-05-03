@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 
         <title>Titan Bank Home</title>
@@ -30,52 +29,6 @@
   </table>
 </form>
 
-        <%@ page import="java.util.GregorianCalendar, java.util.Calendar" %>
-<%  
-    GregorianCalendar currentDate = new GregorianCalendar();
-    int currentYear = currentDate.get(Calendar.YEAR);
-%>
 
-<p>The current date is ${requestScope.currentDate}</p>
 </body>
-=======
-<!DOCTYPE html>
-
-        <title>Titan Bank Home</title>
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Titan Bank Online Banking</h1>
-        <nav>
-            <a href="index.jsp">Home</a> |
-            <a href="login.jsp">Sign In</a> |
-            <a href="new_customer.jsp">Sign Up</a>
-        </nav>
-<form action="adminServlet" method="Post">
-            <table cellspacing="4" border="0">
-                <tr>
-                    <td align="center">User ID:</td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td align="center">Password:</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td align="right"></td>
-                    <td><br><input type="submit" value="Login"></td>
-                </tr>
-            </table>
-</form>
-<%@ page import="java.util.GregorianCalendar, java.util.Calendar" %>
-<%  
-    GregorianCalendar currentDate = new GregorianCalendar();
-    int currentYear = currentDate.get(Calendar.YEAR);
-%>
-
-<p>The current date is ${requestScope.currentDate}</p>
-</body>
->>>>>>> d4c6f00400667ac6bc9d558959c485310824545d
 </html>

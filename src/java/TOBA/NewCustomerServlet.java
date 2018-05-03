@@ -44,14 +44,7 @@ public class NewCustomerServlet extends HttpServlet {
         
         String message;
         String url;
-        if (//firstName == null 
-             //  || lastName == null 
-             // || email == null 
-             // || address == null 
-             //  || phone == null
-                //|| city == null
-               //|| state== null
-               // || zip== null                || 
+        if ( 
                 firstName.isEmpty() 
               || lastName.isEmpty() 
                || email.isEmpty() ){
